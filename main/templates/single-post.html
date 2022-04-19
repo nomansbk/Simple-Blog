@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+ <div class="container">
+     <div class="row">
+         <div class="col-lg-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h1> {{single_post.title}} </h1>
+                        <div class="post-meta">
+                            <span> Published By: {{single_post.user.username}} |</span>
+                            <span> Published Date: {{single_post.created_at}} |</span> <br>
+                            <span> Category: {{single_post.category}} </span>
+                        </div>
+         
+
+                        {% if single_post.image.url %}
+                            <div class="blog-image">
+                            <img src="{{single_post.image.url}}" alt="">
+                            </div>
+                        {% endif %}
+                            <p>{{single_post.description}} </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                <h3> Sidebar Widgets </h3>
+            </div>
+        </div>
+        
+        
+           
+ </div>
+
+{% endblock content %}
+
